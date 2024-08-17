@@ -1,0 +1,101 @@
+/* SignIn.css */
+
+/* Ensure no scrolling and full viewport height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Center the form on the screen */
+.signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(135deg, #e6e9f0, #eef2f3); /* Soft gradient background */
+}
+
+/* Styling for the sign-in form */
+.signin-form {
+    background: #ffffff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+    padding: 16px; /* Reduced padding */
+    width: 100%;
+    max-width: 350px; /* Adjusted width */
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0; /* Subtle border color */
+    margin: 0 auto; /* Center the form */
+}
+
+/* Form title */
+.signin-form h2 {
+    color: #333333; /* Darker text color */
+    font-size: 1.4rem; /* Slightly smaller font size */
+    margin-bottom: 12px; /* Reduced margin */
+    text-align: center;
+    font-weight: 600; /* Bold font weight */
+}
+
+/* Style for input fields */
+.signin-form input {
+    width: 100%;
+    padding: 10px; /* Reduced padding */
+    margin-bottom: 12px; /* Reduced margin */
+    border: 1px solid #d1d1d1; /* Light gray border for inputs */
+    border-radius: 6px; /* Rounded corners for inputs */
+    font-size: 14px; /* Reduced font size */
+    color: #333; /* Dark text color */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft inner shadow */
+}
+
+.signin-form input::placeholder {
+    color: #9e9e9e; /* Light gray placeholder text */
+}
+
+/* Error message styling */
+.error-message {
+    color: #d9534f; /* Red color for error messages */
+    font-size: 13px; /* Smaller font size */
+    margin-bottom: 12px; /* Reduced margin */
+}
+
+/* Button styling */
+.signin-form button {
+    background-color: #1e90ff; /* Bright blue background */
+    color: #ffffff; /* White text color */
+    border: none;
+    padding: 10px; /* Reduced padding */
+    border-radius: 6px; /* Rounded corners for the button */
+    cursor: pointer;
+    font-size: 14px; /* Reduced font size */
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for button */
+}
+
+.signin-form button:hover {
+    background-color: #1c86ee; /* Slightly darker blue on hover */
+}
+
+/* Styling for the login option text */
+.login-option {
+    text-align: center;
+    margin-top: 15px; /* Reduced margin */
+}
+
+.login-option p {
+    font-size: 13px; /* Smaller font size */
+}
+
+.login-option a {
+    color: #1e90ff; /* Blue color for the link */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-option a:hover {
+    text-decoration: underline;
+}
