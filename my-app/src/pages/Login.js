@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; // Create this file for styling
-
+import './Login.css';
 import axios from 'axios';
 
 function Login() {
     const [formData, setFormData] = useState({
         email: '',
         password: '',
-        companyName: ''
+         companyName: ''
     });
     const navigate = useNavigate();
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -29,7 +29,7 @@ function Login() {
         } catch (error) {
             if (error.response) {
                 if (error.response.status === 401) {
-                    alert(error.response.data.message); // Display the error message in an alert
+                    alert(error.response.data.message);
                 } else {
                     alert('An error occurred during login. Please try again.');
                 }
@@ -39,23 +39,38 @@ function Login() {
             }
         }
     };
+
     const handleForgotPassword = () => {
         navigate(`/forgot-password?email=${formData.email}`);
     };
 
-
     return (
-        <div>
+        <div className="login-page">
+        <div className="login-container">
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
-                <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-                <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-                <input type="text" name="companyName" placeholder="Company Name" onChange={handleChange} required />
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Email" 
+                    onChange={handleChange} 
+                    required 
+                    className="input-white"
+                />
+                <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="Password" 
+                    onChange={handleChange} 
+                    required 
+                    className="input-white"
+                />
+                 <input type="text" name="companyName" placeholder="Company Name" onChange={handleChange} required className="input-white" />
                 <button type="submit">Login</button>
             </form>
             <a href="#" onClick={handleForgotPassword}>Forgot Password?</a>
-           
-            <a href="/signin">Sign Up</a>
+            <span>Don't have an account? <a href="/signin">Sign Up</a></span>
+        </div>
         </div>
     );
 }

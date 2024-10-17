@@ -30,7 +30,8 @@ const ForgotPassword = () => {
     };
 
     return (
-        <div className="forgot-password-container">
+        < div className="forgot-password-page">
+          <div  className="forgot-password-container">
             <form className="forgot-password-form" onSubmit={handleContinue}>
                 <h2>Forgot Password</h2>
                 <input
@@ -41,6 +42,7 @@ const ForgotPassword = () => {
                 />
                 <button type="submit">Continue</button>
             </form>
+            </div>
         </div>
     );
 };

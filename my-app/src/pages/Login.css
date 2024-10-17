@@ -1,0 +1,148 @@
+/* Login.css */
+
+/* body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("C:\authentication\my-app\public\bg.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+} */
+
+.login-page {
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("C:\authentication\my-app\public\bg.jpg"); /* Update this to your login background image path */
+    background-size: cover;
+    background-position: center;
+}
+
+.login-container {
+    
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+
+h2 {
+    color: #FF69B4;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    animation: fadeInDown 0.5s ease-out;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 1rem;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: #000;
+}
+
+input:focus {
+    outline: none;
+    border-color: #FF69B4;
+    box-shadow: 0 0 5px #FF69B4;
+}
+input-white::placeholder {
+    font-size: 12px;
+  color: rgb(182, 211, 235);
+}
+
+button {
+    background-color: #FF69B4;
+    color: white;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+button:hover {
+    background-color: #FF1493;
+    transform: translateY(-2px);
+}
+
+a {
+    color: #FF69B4;
+    text-decoration: none;
+    margin-top: 1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #FF1493;
+    transform: translateY(-2px);
+}
+
+span {
+    display: block;
+    margin-top: 1rem;
+    animation: fadeIn 1s ease-out;
+    color: rgb(182, 211, 235) ;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.login-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+input {
+    animation: fadeInDown 0.5s ease-out;
+}
