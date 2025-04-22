@@ -1,0 +1,231 @@
+.login-success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .login-success-card {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Loading animation */
+  .login-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+  
+  .checkmark {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  
+  .checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #4bb543;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+  
+  .checkmark-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    stroke-width: 3;
+    stroke: #4bb543;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  }
+  
+  @keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  /* Success icon */
+  .success-icon {
+    margin: 0 auto 2rem;
+    width: 80px;
+    height: 80px;
+    position: relative;
+  }
+  
+  /* Success icon */
+.success-icon {
+    margin: 0 auto 2rem;
+    width: 80px;
+    height: 80px;
+    position: relative;
+  }
+  
+  .success-icon-circle {
+    width: 80px;
+    height: 80px;
+    background: #f0f9f0;
+    border-radius: 50%;
+    position: relative;
+    animation: scaleIn 0.5s ease-out;
+  }
+  
+  .success-icon-check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 45px;
+    border-bottom: 3px solid #4bb543;
+    border-right: 3px solid #4bb543;
+    transform: translate(-50%, -65%) rotate(45deg);
+    animation: checkmarkDraw 0.6s ease-in-out 0.5s forwards;
+    opacity: 0;
+  }
+  
+  @keyframes scaleIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+  }
+  
+  @keyframes checkmarkDraw {
+    0% {
+      height: 0;
+      width: 0;
+      opacity: 0;
+      border-bottom-width: 0;
+      border-right-width: 0;
+    }
+    50% {
+      height: 0;
+      width: 25px;
+      opacity: 1;
+      border-bottom-width: 3px;
+      border-right-width: 3px;
+    }
+    100% {
+      height: 45px;
+      width: 25px;
+      opacity: 1;
+    }
+  }
+  @keyframes checkmark {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .success-title {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .success-message {
+    font-size: 1.4rem;
+    color: #4bb543;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .success-description {
+    color: #777;
+    margin-bottom: 2rem;
+  }
+  
+  .success-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .primary-button {
+    background-color: #4bb543;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .primary-button:hover {
+    background-color: #429d3a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(75, 181, 67, 0.2);
+  }
+  
+  .secondary-button {
+    background-color: transparent;
+    color: #4bb543;
+    border: 1px solid #4bb543;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .secondary-button:hover {
+    background-color: #f0f9f0;
+    transform: translateY(-2px);
+  }
+  
+  /* Sparkle animation */
+  .sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+  
+  .sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #4bb543;
+    opacity: 0;
+  }
+  
+  @keyframes sparkle {
+    0% { transform: translate(0, 0) scale(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(var(--tx), var(--ty)) scale(1); opacity: 0; }
+  }
+  
+  /* Define individual sparkle positions and animations */
+  .sparkle-0 { top: 20%; left: 20%; --tx: 30px; --ty: -50px; animation: sparkle 2s ease-in-out 0.2s infinite; }
+  .sparkle-1 { top: 80%; left: 25%; --tx: -40px; --ty: 60px; animation: sparkle 2.3s ease-in-out 0.5s infinite; }
+  .sparkle-2 { top: 40%; left: 70%; --tx: 50px; --ty: 30px; animation: sparkle 2.1s ease-in-out 0.7s infinite; }
+  .sparkle-3 { top: 60%; left: 80%; --tx: -30px; --ty: -40px; animation: sparkle 2.4s ease-in-out 0s infinite; }
+  .sparkle-4 { top: 10%; left: 50%; --tx: -20px; --ty: 50px; animation: sparkle 2.2s ease-in-out 0.3s infinite; }
+  .sparkle-5 { top: 85%; left: 60%; --tx: 40px; --ty: -30px; animation: sparkle 2.5s ease-in-out 0.6s infinite; }
+  .sparkle-6 { top: 30%; left: 90%; --tx: -50px; --ty: -30px; animation: sparkle 2.1s ease-in-out 0.1s infinite; }
+  .sparkle-7 { top: 75%; left: 10%; --tx: 40px; --ty: 40px; animation: sparkle 2.3s ease-in-out 0.4s infinite; }
+  .sparkle-8 { top: 15%; left: 80%; --tx: -30px; --ty: 50px; animation: sparkle 2.4s ease-in-out 0.8s infinite; }
+  .sparkle-9 { top: 45%; left: 5%; --tx: 50px; --ty: -40px; animation: sparkle 2.2s ease-in-out 0.2s infinite; }
+  .sparkle-10 { top: 50%; left: 30%; --tx: 30px; --ty: 30px; animation: sparkle 2.5s ease-in-out 0.5s infinite; }
+  .sparkle-11 { top: 5%; left: 40%; --tx: -40px; --ty: -50px; animation: sparkle 2.1s ease-in-out 0.7s infinite; }

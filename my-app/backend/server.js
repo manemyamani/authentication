@@ -38,13 +38,23 @@ app.post('/api/signup', async (req, res) => {
 
         const newUser = new User({ name, email, phoneNumber, companyName, password: hashedPassword });
         await newUser.save();
-        await sendEmail(email, 'Welcome to Our Service', `You have successfully signed up. Your password is: ${password}`);
-        res.status(201).json({ message: 'User registered successfully!' });
+        
+        try {
+            await sendEmail(email, 'Welcome to Our Service', `You have successfully signed up. Your password is: ${password}`);
+            res.status(201).json({ message: 'User registered successfully!' });
+        } catch (emailError) {
+            console.error('Email sending failed:', emailError);
+            // You might want to delete the user if email fails, or just notify
+            res.status(201).json({ 
+                message: 'User registered but welcome email failed to send',
+                warning: 'Email delivery failed'
+            });
+        }
+        
     } catch (error) {
         res.status(500).json({ message: 'Error registering user', error });
     }
 });
-
 app.post('/api/login', async (req, res) => {
     const { email, password, companyName } = req.body;
 

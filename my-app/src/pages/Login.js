@@ -24,7 +24,8 @@ function Login() {
         try {
             const response = await axios.post('http://localhost:5000/api/login', formData);
             if (response.status === 200) {
-                alert('Login successful!');
+                navigate('/LoginSuccess');
+
             }
         } catch (error) {
             if (error.response) {
