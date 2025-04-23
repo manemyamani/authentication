@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("C:\authentication\my-app\public\bg.jpg"); /* Update this to your login background image path */
+    background-image: url("bg.jpg"); /* Update this to your login background image path */
     background-size: cover;
     background-position: center;
 }
