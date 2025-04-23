@@ -36,7 +36,7 @@ const OtpVerification = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(
+            const response = await axios.post(
                 `${process.env.REACT_APP_API_URL}/api/verify-otp`,
                 { email, otp }
               );
