@@ -62,8 +62,7 @@ const SignIn = () => {
             return;
         }
         try {
-            const response=await axios.post('http://localhost:5000/api/signup', formData);
-            
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/signup`, formData);           
             if(response.status===201){
              alert('Sign-up successful! Check your email for confirmation.');
              navigate('/login');}

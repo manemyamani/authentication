@@ -36,7 +36,10 @@ const OtpVerification = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/verify-otp', { email, otp });
+            await axios.post(
+                `${process.env.REACT_APP_API_URL}/api/verify-otp`,
+                { email, otp }
+              );
             if (response.status === 200) {
                 alert('OTP verified');
                 navigate(`/reset-password?email=${email}`);

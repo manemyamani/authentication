@@ -20,7 +20,10 @@ const ForgotPassword = () => {
     const handleContinue = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/forgot-password', { email });
+            await axios.post(
+                `${process.env.REACT_APP_API_URL}/api/forgot-password`,
+                { email}
+              );
             alert('OTP sent to your email');
             navigate(`/otp-verification?email=${email}`);
         } catch (error) {
