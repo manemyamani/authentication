@@ -31,7 +31,8 @@ const ResetPassword = () => {
     };
 
     return (
-        <div className="reset-password-container">
+        <div className="reset-password-container"
+        style={{ backgroundImage: 'url("/imac wallaper.jpg")' }}>
             <form className="reset-password-form" onSubmit={handleSubmit}>
                 <h2>Reset Password</h2>
                 <input

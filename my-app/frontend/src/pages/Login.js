@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function Login() {
@@ -42,12 +43,13 @@ function Login() {
         }
     };
 
-    const handleForgotPassword = () => {
-        navigate(`/forgot-password?email=${formData.email}`);
-    };
+    // const handleForgotPassword = () => {
+    //     navigate(`/forgot-password?email=${formData.email}`);
+    // };
 
     return (
-        <div className="login-page">
+        <div className="login-page"
+        style={{ backgroundImage: 'url("/bg.jpg")' }}>
         <div className="login-container">
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
@@ -70,7 +72,8 @@ function Login() {
                  <input type="text" name="companyName" placeholder="Company Name" onChange={handleChange} required className="input-white" />
                 <button type="submit">Login</button>
             </form>
-            <a href="#" onClick={handleForgotPassword}>Forgot Password?</a>
+            {/* <a href="#" onClick={handleForgotPassword}>Forgot Password?</a> */}
+            <Link to={`/forgot-password?email=${formData.email}`}>Forgot Password?</Link>
             <span>Don't have an account? <a href="/signin">Sign Up</a></span>
         </div>
         </div>

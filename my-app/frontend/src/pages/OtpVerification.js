@@ -62,7 +62,9 @@ const OtpVerification = () => {
     };
 
     return (
-        <div className="otp-verification-container">
+        <div className="otp-verification-container"
+        style={{ backgroundImage: 'url("/forgot.jpg")' }}>
+
             <form className="otp-verification-form" onSubmit={handleSubmit}>
                 <h2>OTP Verification</h2>
                 <input

@@ -33,7 +33,9 @@ const ForgotPassword = () => {
     };
 
     return (
-        < div className="forgot-password-page">
+        < div className="forgot-password-page"
+        style={{ backgroundImage: 'url("/forgot.jpg")' }}
+        >
           <div  className="forgot-password-container">
             <form className="forgot-password-form" onSubmit={handleContinue}>
                 <h2>Forgot Password</h2>
